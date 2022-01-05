@@ -1,8 +1,11 @@
-name: Build
-on: [push]
+name: Release
+on:
+  release:
+    types:
+      - created
 
 jobs:
-  build:
+  release:
     runs-on: ${{ matrix.os }}
 
     strategy:
@@ -23,5 +26,7 @@ jobs:
       - name: install dependencies
         run: yarn
 
-      - name: build
-        run: yarn make
+      - name: publish
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: yarn publish
