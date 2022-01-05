@@ -1,7 +1,7 @@
 {
   "name": "auto-publish",
   "productName": "auto-publish",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "My Electron application description",
   "main": ".webpack/main",
   "scripts": {
@@ -25,7 +25,7 @@
               "owner": "ihsanvp",
               "name": "electron-auto-publish"
             },
-          "draft": true
+            "draft": true
           }
         }
       ],
