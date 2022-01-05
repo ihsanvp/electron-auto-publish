@@ -3,21 +3,6 @@
   <head>
     <meta charset="UTF-8" />
     <title>Hello World!</title>
-    <style>
-      #notification {
-        position: fixed;
-        bottom: 20px;
-        left: 20px;
-        width: 200px;
-        padding: 20px;
-        border-radius: 5px;
-        background-color: white;
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-      }
-      .hidden {
-        display: none;
-      }
-    </style>
   </head>
   <body>
     <h1>💖 Hello World!</h1>
@@ -31,42 +16,8 @@
       <button id="increment">Increment</button>
       <button id="decrement">Decrement</button>
       <button id="reset">Reset</button>
-      <div id="notification" class="hidden">
-        <p id="message"></p>
-        <button id="close-button" onClick="closeNotification()">Close</button>
-        <button id="restart-button" onClick="restartApp()" class="hidden">
-          Restart
-        </button>
-      </div>
     </div>
   </body>
-
-  <script>
-    function closeNotification() {
-      notification.classList.add("hidden");
-    }
-    function restartApp() {
-      window.app.restartApp();
-    }
-  </script>
-
-  <script>
-    const notification = document.getElementById("notification");
-    const message = document.getElementById("message");
-    const restartButton = document.getElementById("restart-button");
-
-    window.app.onUpdateAvailable(() => {
-      message.innerText = "A new update is available. Downloading now...";
-      notification.classList.remove("hidden");
-    });
-
-    window.app.onUpdateDownloaded(() => {
-      message.innerText =
-        "Update Downloaded. It will be installed on restart. Restart now?";
-      restartButton.classList.remove("hidden");
-      notification.classList.remove("hidden");
-    });
-  </script>
 
   <script>
     (async () => {
