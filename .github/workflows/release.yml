@@ -15,21 +15,18 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Show context
+      - name: Setup Nodejs and npm
+        uses: actions/setup-node@v2
+        with:
+          node-version: "14"
+
+      - name: Setup Yarn
+        run: npm install -g yarn
+
+      - name: install dependencies
+        run: yarn
+
+      - name: publish
         env:
-          GITHUB_CONTEXT: ${{ toJSON(github) }}
-        run: echo "$GITHUB_CONTEXT"
-
-      # - name: Setup Nodejs and npm
-      #   uses: actions/setup-node@v2
-      #   with:
-      #     node-version: "14"
-
-      # - name: Setup Yarn
-      #   run: npm install -g yarn
-
-      # - name: install dependencies
-      #   run: yarn
-
-      # - name: publish
-      #   run: yarn publish --auth-token=${{ secrets.AUTH_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: yarn run publish
