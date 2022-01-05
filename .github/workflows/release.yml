@@ -27,7 +27,8 @@ jobs:
       #   run: yarn
 
       - name: show github token
-        GITHUB_TOKEN: ${{ secrets.AUTH_TOKEN }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.AUTH_TOKEN }}
         run: echo "$GITHUB_TOKEN"
 
       # - name: publish
