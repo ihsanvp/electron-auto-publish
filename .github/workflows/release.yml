@@ -29,7 +29,7 @@ jobs:
       - name: show github token
         env:
           GITHUB_TOKEN: ${{ secrets.AUTH_TOKEN }}
-        run: echo "$GITHUB_TOKEN"
+        run: node test
 
       # - name: publish
       #   env:
