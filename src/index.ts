@@ -12,7 +12,7 @@ if (require("electron-squirrel-startup")) {
   app.quit();
 }
 
-autoUpdate();
+autoUpdate({ checkFrequency: 1000 * 60 * 5 /* 5 minutes */ });
 
 const createWindow = (): void => {
   // Create the browser window.
