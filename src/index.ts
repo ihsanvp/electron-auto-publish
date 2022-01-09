@@ -99,6 +99,12 @@ autoUpdater.on("error", (message) => {
   );
 });
 
+autoUpdater.on("update-available", () => {
+  ipcMain.emit("app-update-available");
+});
+
 ipcMain.handle("check-for-app-updates", async () => {
-  //
+  if (!electronIsDev) {
+    autoUpdater.checkForUpdates();
+  }
 });
