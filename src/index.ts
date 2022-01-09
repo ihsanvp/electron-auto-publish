@@ -14,7 +14,7 @@ if (require("electron-squirrel-startup")) {
 
 if (!electronIsDev) {
   const server =
-    "https://electron-auto-publish-update-server-pi2uqmf3v-ihsanvp.vercel.app/";
+    "https://electron-auto-publish-update-server-pi2uqmf3v-ihsanvp.vercel.app";
   const url = `${server}/update/${process.platform}/${app.getVersion()}`;
 
   autoUpdater.setFeedURL({ url });
