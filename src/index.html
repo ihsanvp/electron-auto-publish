@@ -17,6 +17,8 @@
       <button id="decrement">Decrement</button>
       <button id="reset">Reset</button>
     </div>
+    <hr />
+    <button id="update">Check for updates</button>
   </body>
 
   <script>
@@ -45,5 +47,10 @@
       value = val;
       counter.innerText = value;
     }
+  </script>
+
+  <script>
+    const update = document.getElementById("update");
+    update.addEventListener("click", window.app.checkForUpdates);
   </script>
 </html>
