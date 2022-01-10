@@ -55,6 +55,9 @@
     window.app.onUpdateAvailable(() => {
       alert("update Available");
     });
+    window.app.onUpdateDownload((...args) => {
+      console.log(args);
+    });
     update.addEventListener("click", window.app.checkForUpdates);
   </script>
 </html>
