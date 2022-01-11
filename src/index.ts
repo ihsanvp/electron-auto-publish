@@ -17,7 +17,7 @@ if (!electronIsDev) {
   const server = "https://electron-auto-publish-update-server.vercel.app";
   const url = `${server}/update/${process.platform}/${app.getVersion()}`;
 
-  autoUpdater.setFeedURL(url);
+  autoUpdater.setFeedURL({ url, publishAutoUpdate: false, provider: "github" });
 }
 
 const createWindow = (): void => {
